@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface DlqEventJpaRepository extends JpaRepository<DlqEventEntity, UUID> {
@@ -26,7 +27,9 @@ public interface DlqEventJpaRepository extends JpaRepository<DlqEventEntity, UUI
             LocalDateTime end,
             Pageable pageable
     );
-    
+
+    Optional<DlqEventEntity> findFirstByPayloadAndReprocessedFalseOrderByCreatedAtDesc(String payload);
+
     @Query("""
     	    SELECT e FROM DlqEventEntity e
     	    WHERE e.reprocessed = false

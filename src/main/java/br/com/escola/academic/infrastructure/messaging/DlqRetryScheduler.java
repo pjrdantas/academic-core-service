@@ -18,6 +18,7 @@ public class DlqRetryScheduler {
 
     private final DlqEventJpaRepository repository;
     private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaPayloadNormalizer payloadNormalizer;
 
     private static final int MAX_RETRIES = 5;
 
@@ -32,7 +33,8 @@ public class DlqRetryScheduler {
 
                 log.info("Reprocessando DLQ {} tentativa {}", event.getId(), event.getRetryCount());
 
-                kafkaTemplate.send("MATRICULA", event.getPayload());
+                String normalizedPayload = payloadNormalizer.normalizeToJsonObject(event.getPayload());
+                kafkaTemplate.send("MATRICULA", normalizedPayload);
 
                 event.setRetryCount(event.getRetryCount() + 1);
 

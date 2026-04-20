@@ -9,13 +9,15 @@ import org.springframework.stereotype.Component;
 import br.com.escola.academic.application.port.out.SagaEventPublisher;
 import br.com.escola.academic.domain.event.MatriculaCanceladaEvent;
 import br.com.escola.academic.domain.event.MatriculaConfirmadaEvent;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
 public class SagaEventPublisherImpl implements SagaEventPublisher {
 
-    private final KafkaTemplate<String, Object> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final ObjectMapper objectMapper;
 
     private static final String TOPIC_MATRICULA_CONFIRMADA = "matricula-confirmada";
     private static final String TOPIC_MATRICULA_CANCELADA = "matricula-cancelada";
@@ -31,7 +33,7 @@ public class SagaEventPublisherImpl implements SagaEventPublisher {
                 1
         );
 
-        kafkaTemplate.send(TOPIC_MATRICULA_CONFIRMADA, event);
+        kafkaTemplate.send(TOPIC_MATRICULA_CONFIRMADA, toJson(event));
     }
 
     @Override
@@ -45,6 +47,14 @@ public class SagaEventPublisherImpl implements SagaEventPublisher {
                 1
         );
 
-        kafkaTemplate.send(TOPIC_MATRICULA_CANCELADA, event);
+        kafkaTemplate.send(TOPIC_MATRICULA_CANCELADA, toJson(event));
+    }
+
+    private String toJson(Object event) {
+        try {
+            return objectMapper.writeValueAsString(event);
+        } catch (Exception ex) {
+            throw new IllegalStateException("Falha ao serializar evento da saga", ex);
+        }
     }
 }

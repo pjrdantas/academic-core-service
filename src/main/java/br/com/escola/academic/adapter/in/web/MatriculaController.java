@@ -18,7 +18,7 @@ public class MatriculaController {
         this.useCase = useCase;
     }
 
-    @PostMapping
+    @PostMapping({"", "/"})
     public ResponseEntity<Matricula> matricular(@RequestBody MatriculaRequest request) {
 
         Matricula matricula = useCase.executar(

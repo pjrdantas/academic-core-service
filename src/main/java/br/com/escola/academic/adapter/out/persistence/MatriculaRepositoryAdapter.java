@@ -27,18 +27,13 @@ public class MatriculaRepositoryAdapter implements MatriculaRepository {
 
         MatriculaEntity entity = MatriculaMapper.toEntity(matricula);
 
-        // garantir entidades gerenciadas
-        if (entity.getAluno() != null && entity.getAluno().getId() != null) {
-            entity.setAluno(entityManager.getReference(AlunoEntity.class, entity.getAluno().getId()));
+        // IDs são atribuídos manualmente; para novos registros use persist() para forçar INSERT.
+        if (!repository.existsById(entity.getId())) {
+            entityManager.persist(entity);
+            entityManager.flush();
+            return MatriculaMapper.toDomain(entity);
         }
 
-        if (entity.getTurma() != null && entity.getTurma().getId() != null) {
-            entity.setTurma(entityManager.getReference(TurmaEntity.class, entity.getTurma().getId()));
-        }
-
-        if (entity.getPeriodoLetivo() != null && entity.getPeriodoLetivo().getId() != null) {
-            entity.setPeriodoLetivo(entityManager.getReference(PeriodoLetivoEntity.class, entity.getPeriodoLetivo().getId()));
-        }
 
         MatriculaEntity saved = repository.save(entity);
 
