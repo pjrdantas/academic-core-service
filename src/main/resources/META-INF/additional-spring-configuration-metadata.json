@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "app.kafka.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'app.kafka.enabled'"
+  },
+  {
+    "name": "app.kafka.topics.pagamento-solicitado",
+    "type": "java.lang.String",
+    "description": "A description for 'app.kafka.topics.pagamento-solicitado'"
+  },
+  {
+    "name": "app.kafka.topics.pagamentoProcessado",
+    "type": "java.lang.String",
+    "description": "A description for 'app.kafka.topics.pagamentoProcessado'"
+  }
+]}

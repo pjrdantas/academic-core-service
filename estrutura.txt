@@ -1,0 +1,327 @@
+Listagem de caminhos de pasta
+O n£mero de s‚rie do volume ‚ C0000100 2EC2:27B3
+C:.
+|   .classpath
+|   .factorypath
+|   .gitattributes
+|   .gitignore
+|   .project
+|   compose.yaml
+|   estrutura.txt
+|   HELP.md
+|   mvnw
+|   mvnw.cmd
+|   pom.xml
+|   
++---.mvn
+|   \---wrapper
+|           maven-wrapper.properties
+|           
++---.settings
+|       org.eclipse.core.resources.prefs
+|       org.eclipse.jdt.apt.core.prefs
+|       org.eclipse.jdt.core.prefs
+|       org.eclipse.m2e.core.prefs
+|       org.springframework.ide.eclipse.prefs
+|       
++---src
+|   +---main
+|   |   +---java
+|   |   |   \---br
+|   |   |       \---com
+|   |   |           \---escola
+|   |   |               \---academic
+|   |   |                   |   AcademicCoreServiceApplication.java
+|   |   |                   |   
+|   |   |                   +---adapter
+|   |   |                   |   +---in
+|   |   |                   |   |   \---web
+|   |   |                   |   |       |   DlqController.java
+|   |   |                   |   |       |   MatriculaController.java
+|   |   |                   |   |       |   MatriculaRequest.java
+|   |   |                   |   |       |   
+|   |   |                   |   |       \---exception
+|   |   |                   |   |               ErrorResponse.java
+|   |   |                   |   |               GlobalExceptionHandler.java
+|   |   |                   |   |               
+|   |   |                   |   \---out
+|   |   |                   |       \---persistence
+|   |   |                   |           |   AlunoRepositoryAdapter.java
+|   |   |                   |           |   DlqEventRepositoryAdapter.java
+|   |   |                   |           |   MatriculaRepositoryAdapter.java
+|   |   |                   |           |   MatriculaSagaRepositoryAdapter.java
+|   |   |                   |           |   OutboxRepositoryAdapter.java
+|   |   |                   |           |   ProcessedEventRepositoryAdapter.java
+|   |   |                   |           |   
+|   |   |                   |           +---entity
+|   |   |                   |           |       AlunoEntity.java
+|   |   |                   |           |       DisciplinaEntity.java
+|   |   |                   |           |       DlqEventEntity.java
+|   |   |                   |           |       MatriculaEntity.java
+|   |   |                   |           |       MatriculaSagaEntity.java
+|   |   |                   |           |       OutboxEventEntity.java
+|   |   |                   |           |       PeriodoLetivoEntity.java
+|   |   |                   |           |       PessoaEntity.java
+|   |   |                   |           |       ProcessedEventEntity.java
+|   |   |                   |           |       ProfessorEntity.java
+|   |   |                   |           |       TurmaEntity.java
+|   |   |                   |           |       
+|   |   |                   |           +---mapper
+|   |   |                   |           |       AlunoMapper.java
+|   |   |                   |           |       DisciplinaMapper.java
+|   |   |                   |           |       MatriculaMapper.java
+|   |   |                   |           |       OutboxMapper.java
+|   |   |                   |           |       ProcessedEventMapper.java
+|   |   |                   |           |       ProfessorMapper.java
+|   |   |                   |           |       TurmaMapper.java
+|   |   |                   |           |       
+|   |   |                   |           \---repository
+|   |   |                   |                   AlunoJpaRepository.java
+|   |   |                   |                   DisciplinaJpaRepository.java
+|   |   |                   |                   DlqEventJpaRepository.java
+|   |   |                   |                   MatriculaJpaRepository.java
+|   |   |                   |                   MatriculaSagaJpaRepository.java
+|   |   |                   |                   OutboxJpaRepository.java
+|   |   |                   |                   ProcessedEventJpaRepository.java
+|   |   |                   |                   ProfessorJpaRepository.java
+|   |   |                   |                   TurmaJpaRepository.java
+|   |   |                   |                   
+|   |   |                   +---application
+|   |   |                   |   +---port
+|   |   |                   |   |   \---out
+|   |   |                   |   |           AlunoRepository.java
+|   |   |                   |   |           DisciplinaRepository.java
+|   |   |                   |   |           MatriculaRepository.java
+|   |   |                   |   |           MatriculaSagaRepository.java
+|   |   |                   |   |           OutboxRepository.java
+|   |   |                   |   |           ProcessedEventRepository.java
+|   |   |                   |   |           ProfessorRepository.java
+|   |   |                   |   |           SagaEventPublisher.java
+|   |   |                   |   |           TurmaRepository.java
+|   |   |                   |   |           
+|   |   |                   |   \---usecase
+|   |   |                   |           CriarAlunoUseCase.java
+|   |   |                   |           CriarDisciplinaUseCase.java
+|   |   |                   |           CriarProfessorUseCase.java
+|   |   |                   |           CriarTurmaUseCase.java
+|   |   |                   |           MatricularAlunoUseCase.java
+|   |   |                   |           
+|   |   |                   +---domain
+|   |   |                   |   +---core
+|   |   |                   |   |       Aluno.java
+|   |   |                   |   |       Disciplina.java
+|   |   |                   |   |       Matricula.java
+|   |   |                   |   |       Professor.java
+|   |   |                   |   |       Turma.java
+|   |   |                   |   |       
+|   |   |                   |   +---event
+|   |   |                   |   |       MatriculaCanceladaEvent.java
+|   |   |                   |   |       MatriculaConfirmadaEvent.java
+|   |   |                   |   |       MatriculaCriadaEvent.java
+|   |   |                   |   |       MatriculaSolicitadaEvent.java
+|   |   |                   |   |       OutboxEvent.java
+|   |   |                   |   |       OutboxStatus.java
+|   |   |                   |   |       PagamentoProcessadoEvent.java
+|   |   |                   |   |       PagamentoSolicitadoEvent.java
+|   |   |                   |   |       ProcessedEvent.java
+|   |   |                   |   |       
+|   |   |                   |   +---exception
+|   |   |                   |   |       BusinessException.java
+|   |   |                   |   |       TransientException.java
+|   |   |                   |   |       
+|   |   |                   |   \---saga
+|   |   |                   |           MatriculaSaga.java
+|   |   |                   |           SagaStatus.java
+|   |   |                   |           
+|   |   |                   \---infrastructure
+|   |   |                       +---messaging
+|   |   |                       |       DlqConsumer.java
+|   |   |                       |       DlqDispatcher.java
+|   |   |                       |       DlqRetryScheduler.java
+|   |   |                       |       MatriculaConsumer.java
+|   |   |                       |       MatriculaSagaOrchestrator.java
+|   |   |                       |       OutboxEventPublisher.java
+|   |   |                       |       OutboxScheduler.java
+|   |   |                       |       SagaEventPublisherImpl.java
+|   |   |                       |       
+|   |   |                       \---observability
+|   |   |                               CorrelationContext.java
+|   |   |                               ObservabilityMetrics.java
+|   |   |                               
+|   |   \---resources
+|   |       |   application.yaml
+|   |       |   
+|   |       +---META-INF
+|   |       |       additional-spring-configuration-metadata.json
+|   |       |       
+|   |       +---static
+|   |       \---templates
+|   \---test
+|       \---java
+|           \---br
+|               \---com
+|                   \---escola
+|                       \---academic
+|                           |   AcademicCoreServiceApplicationTests.java
+|                           |   
+|                           \---integration
+\---target
+    |   academic-core-service-0.0.1-SNAPSHOT.jar
+    |   academic-core-service-0.0.1-SNAPSHOT.jar.original
+    |   
+    +---classes
+    |   |   application.yaml
+    |   |   
+    |   +---br
+    |   |   \---com
+    |   |       \---escola
+    |   |           \---academic
+    |   |               |   AcademicCoreServiceApplication.class
+    |   |               |   
+    |   |               +---adapter
+    |   |               |   +---in
+    |   |               |   |   \---web
+    |   |               |   |       |   DlqController.class
+    |   |               |   |       |   MatriculaController.class
+    |   |               |   |       |   MatriculaRequest.class
+    |   |               |   |       |   
+    |   |               |   |       \---exception
+    |   |               |   |               ErrorResponse.class
+    |   |               |   |               GlobalExceptionHandler.class
+    |   |               |   |               
+    |   |               |   \---out
+    |   |               |       \---persistence
+    |   |               |           |   AlunoRepositoryAdapter.class
+    |   |               |           |   DlqEventRepositoryAdapter.class
+    |   |               |           |   MatriculaRepositoryAdapter.class
+    |   |               |           |   MatriculaSagaRepositoryAdapter.class
+    |   |               |           |   OutboxRepositoryAdapter.class
+    |   |               |           |   ProcessedEventRepositoryAdapter.class
+    |   |               |           |   
+    |   |               |           +---entity
+    |   |               |           |       AlunoEntity.class
+    |   |               |           |       DisciplinaEntity.class
+    |   |               |           |       DlqEventEntity.class
+    |   |               |           |       MatriculaEntity.class
+    |   |               |           |       MatriculaSagaEntity.class
+    |   |               |           |       OutboxEventEntity$OutboxEventEntityBuilder.class
+    |   |               |           |       OutboxEventEntity.class
+    |   |               |           |       PeriodoLetivoEntity.class
+    |   |               |           |       PessoaEntity.class
+    |   |               |           |       ProcessedEventEntity$ProcessedEventEntityBuilder.class
+    |   |               |           |       ProcessedEventEntity.class
+    |   |               |           |       ProfessorEntity.class
+    |   |               |           |       TurmaEntity.class
+    |   |               |           |       
+    |   |               |           +---mapper
+    |   |               |           |       AlunoMapper.class
+    |   |               |           |       DisciplinaMapper.class
+    |   |               |           |       MatriculaMapper.class
+    |   |               |           |       OutboxMapper.class
+    |   |               |           |       ProcessedEventMapper.class
+    |   |               |           |       ProfessorMapper.class
+    |   |               |           |       TurmaMapper.class
+    |   |               |           |       
+    |   |               |           \---repository
+    |   |               |                   AlunoJpaRepository.class
+    |   |               |                   DisciplinaJpaRepository.class
+    |   |               |                   DlqEventJpaRepository.class
+    |   |               |                   MatriculaJpaRepository.class
+    |   |               |                   MatriculaSagaJpaRepository.class
+    |   |               |                   OutboxJpaRepository.class
+    |   |               |                   ProcessedEventJpaRepository.class
+    |   |               |                   ProfessorJpaRepository.class
+    |   |               |                   TurmaJpaRepository.class
+    |   |               |                   
+    |   |               +---application
+    |   |               |   +---port
+    |   |               |   |   \---out
+    |   |               |   |           AlunoRepository.class
+    |   |               |   |           DisciplinaRepository.class
+    |   |               |   |           MatriculaRepository.class
+    |   |               |   |           MatriculaSagaRepository.class
+    |   |               |   |           OutboxRepository.class
+    |   |               |   |           ProcessedEventRepository.class
+    |   |               |   |           ProfessorRepository.class
+    |   |               |   |           SagaEventPublisher.class
+    |   |               |   |           TurmaRepository.class
+    |   |               |   |           
+    |   |               |   \---usecase
+    |   |               |           CriarAlunoUseCase.class
+    |   |               |           CriarDisciplinaUseCase.class
+    |   |               |           CriarProfessorUseCase.class
+    |   |               |           CriarTurmaUseCase.class
+    |   |               |           MatricularAlunoUseCase.class
+    |   |               |           
+    |   |               +---domain
+    |   |               |   +---core
+    |   |               |   |       Aluno.class
+    |   |               |   |       Disciplina.class
+    |   |               |   |       Matricula.class
+    |   |               |   |       Professor.class
+    |   |               |   |       Turma.class
+    |   |               |   |       
+    |   |               |   +---event
+    |   |               |   |       MatriculaCanceladaEvent.class
+    |   |               |   |       MatriculaConfirmadaEvent.class
+    |   |               |   |       MatriculaCriadaEvent.class
+    |   |               |   |       MatriculaSolicitadaEvent.class
+    |   |               |   |       OutboxEvent.class
+    |   |               |   |       OutboxStatus.class
+    |   |               |   |       PagamentoProcessadoEvent.class
+    |   |               |   |       PagamentoSolicitadoEvent.class
+    |   |               |   |       ProcessedEvent.class
+    |   |               |   |       
+    |   |               |   +---exception
+    |   |               |   |       BusinessException.class
+    |   |               |   |       TransientException.class
+    |   |               |   |       
+    |   |               |   \---saga
+    |   |               |           MatriculaSaga.class
+    |   |               |           SagaStatus.class
+    |   |               |           
+    |   |               \---infrastructure
+    |   |                   +---messaging
+    |   |                   |       DlqConsumer.class
+    |   |                   |       DlqDispatcher.class
+    |   |                   |       DlqRetryScheduler.class
+    |   |                   |       MatriculaConsumer.class
+    |   |                   |       MatriculaSagaOrchestrator.class
+    |   |                   |       OutboxEventPublisher.class
+    |   |                   |       OutboxScheduler.class
+    |   |                   |       SagaEventPublisherImpl.class
+    |   |                   |       
+    |   |                   \---observability
+    |   |                           CorrelationContext.class
+    |   |                           ObservabilityMetrics.class
+    |   |                           
+    |   \---META-INF
+    |           additional-spring-configuration-metadata.json
+    |           
+    +---generated-sources
+    |   \---annotations
+    +---generated-test-sources
+    |   \---test-annotations
+    +---maven-archiver
+    |       pom.properties
+    |       
+    +---maven-status
+    |   \---maven-compiler-plugin
+    |       +---compile
+    |       |   \---default-compile
+    |       |           createdFiles.lst
+    |       |           inputFiles.lst
+    |       |           
+    |       \---testCompile
+    |           \---default-testCompile
+    |                   createdFiles.lst
+    |                   inputFiles.lst
+    |                   
+    +---surefire-reports
+    \---test-classes
+        \---br
+            \---com
+                \---escola
+                    \---academic
+                            AcademicCoreServiceApplicationTests.class
+                            
